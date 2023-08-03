@@ -2,6 +2,13 @@
 
 This repository has been created to get started with [Flux](https://fluxcd.io/) and GitOps. [`whaley`](https://github.com/imgios/whaley) has been used to spin up a 3-nodes Kubernetes cluster using docker containers as nodes.
 
+###### Structure
+```shell
+📁 lab-ops/        # Repository root directory
+├─ 📄 ansible/     # Ansible Playbooks to manage the infrastructure
+└─ ☸️ clusters/    # Kubernetes clusters defined as code
+```
+
 > **Note**
 >
 > GitOps is a way of implementing Continuous Deployment for cloud-native applications. It focuses on a developer-centric experience when operating infrastructure using tools developers are already familiar with, including Git and Continuous Deployment tools.
