@@ -1,0 +1,18 @@
+- hosts: localhost
+  become: 'no'
+  tasks:
+    - name: Stop whaley Kubernetes-in-Docker cluster
+      shell: docker exec -d lab-ops kind delete cluster --name whaley
+      register: cluster
+      failed_when: cluster.rc != 0
+    
+    - name: Wait for the control-plane node to be deleted
+      shell: docker container ls
+      register: result
+      until: result.stdout.find("whaley-control-plane") == -1
+      delay: 2
+    
+    - name: Delete cluster jumphost
+      shell: docker rm lab-ops --force
+      register: jumphost
+      failed_when: jumphost.rc != 0
