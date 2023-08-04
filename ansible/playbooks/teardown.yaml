@@ -10,6 +10,7 @@
       shell: docker container ls
       register: result
       until: result.stdout.find("whaley-control-plane") == -1
+      retries: 10
       delay: 2
     
     - name: Delete cluster jumphost
