@@ -13,6 +13,6 @@
         msg: "{{ version.stdout_lines }}"
 
     - name: Start whaley Kubernetes-in-Docker cluster
-      shell: docker run -d --name lab-ops --rm -p 30303:8001 -v /var/run/docker.sock:/var/run/docker.sock -it ghcr.io/imgios/whaley:latest
+      shell: docker run -d --name lab-ops --rm -p 30303:8001 -v /var/run/docker.sock:/var/run/docker.sock -it '{{ image }}'
       register: cluster
       failed_when: cluster.rc != 0
