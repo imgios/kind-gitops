@@ -1,7 +1,7 @@
 - hosts: localhost
   become: 'no'
   vars:
-    image: ghcr.io/imgios/whaley:latest
+    image: ghcr.io/imgios/whaley:1.2
   tasks:
     - name: Check if docker is installed on system
       shell: docker --version
