@@ -10,6 +10,7 @@ This repository has been created to get started with [Flux](https://fluxcd.io/) 
 ```shell
 📁 lab-ops/        # Repository root directory
 ├─ 📄 ansible/     # Ansible Playbooks to manage the infrastructure
+├─ 📦 apps/        # Application (to be) deployed in the cluster
 └─ ☸️ clusters/    # Kubernetes clusters defined as code
 ```
 
